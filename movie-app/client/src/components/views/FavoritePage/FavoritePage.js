@@ -23,23 +23,6 @@ function FavoritePage() {
     });
   };
 
-  const onClickDelete = (movieId, userFrom) => {
-    const variables = {
-      movieId,
-      userFrom,
-    };
-
-    Axios.post("/api/favorite/removeFromFavorite", variables).then(
-      (response) => {
-        if (response.data.success) {
-          fetchFavoredMovie();
-        } else {
-          alert("리스트에서 지우는데 실패했습니다.");
-        }
-      }
-    );
-  };
-
   const renderCards = Favorites.map((favorite, index) => {
     const content = (
       <div>
@@ -68,6 +51,23 @@ function FavoritePage() {
       </tr>
     );
   });
+
+  const onClickDelete = (movieId, userFrom) => {
+    const variables = {
+      movieId,
+      userFrom,
+    };
+
+    Axios.post("/api/favorite/removeFromFavorite", variables).then(
+      (response) => {
+        if (response.data.success) {
+          fetchFavoredMovie();
+        } else {
+          alert("리스트에서 지우는데 실패했습니다.");
+        }
+      }
+    );
+  };
 
   return (
     <div style={{ width: "85%", margin: "3rem auto" }}>
