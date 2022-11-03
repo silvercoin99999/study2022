@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Menu } from "antd";
+import { Link } from "react-router-dom";
 
 const items = [
-  { label: "메뉴1", key: "menu1" }, // remember to pass the key prop
-  { label: "메뉴2", key: "menu2" }, // which is required
+  { label: <Link to="favorite">Favorite</Link>, key: "favorite" },
+  { label: "메뉴2", key: "menu2" },
   {
     label: "메뉴3",
     key: "menu3",

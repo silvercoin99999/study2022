@@ -1,25 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import LeftMenu from "./Sections/LeftMenu";
 import RightMenu from "./Sections/RightMenu";
-import { SwapRightOutlined } from "@ant-design/icons";
-import { Drawer, Button } from "antd";
 import "./Sections/Navbar.css";
 
 function NavBar() {
-  const [open, setOpen] = useState(false);
-
-  const showDrawer = () => {
-    setOpen(true);
-  };
-
-  const onClose = () => {
-    setOpen(false);
-  };
-
   return (
     <nav
       className="menu"
-      style={{ position: "fixed", zIndex: 5, width: "100%" }}
+      style={{ zIndex: 5, position: "fixed", top: 0, width: "100%" }}
     >
       <div className="menu__logo">
         <a href="/">Logo</a>
@@ -31,24 +19,6 @@ function NavBar() {
         <div className="menu_rigth">
           <RightMenu mode="horizontal" />
         </div>
-        <Button
-          className="menu__mobile-button"
-          type="primary"
-          onClick={showDrawer}
-        >
-          <SwapRightOutlined />
-        </Button>
-        <Drawer
-          title="Basic Drawer"
-          placement="right"
-          className="menu_drawer"
-          closable={false}
-          onClose={onClose}
-          open={open}
-        >
-          <LeftMenu mode="inline" />
-          <RightMenu mode="inline" />
-        </Drawer>
       </div>
     </nav>
   );

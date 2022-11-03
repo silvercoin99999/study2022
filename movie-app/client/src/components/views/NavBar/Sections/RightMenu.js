@@ -11,8 +11,6 @@ const items1 = [
   { label: <Link to="/register">Signup</Link>, key: "Signup" },
 ];
 
-const items2 = [{ label: "Logout", key: "Signin" }];
-
 function RightMenu(props) {
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
@@ -30,11 +28,7 @@ function RightMenu(props) {
   if (user.userData && !user.userData.isAuth) {
     return <Menu items={items1} mode={props.mode} />;
   } else {
-    return (
-      <button onClick={logoutHandler}>
-        <Menu items={items2} mode={props.mode} />
-      </button>
-    );
+    return <button onClick={logoutHandler}>로그아웃</button>;
   }
 }
 

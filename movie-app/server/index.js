@@ -22,6 +22,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/api/users", require("./routes/users"));
+app.use("/api/favorite", require("./routes/favorite"));
 app.use("/uploads", express.static("uploads"));
 
 // Serve static assets if in production
