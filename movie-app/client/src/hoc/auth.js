@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../_actions/user_actions";
