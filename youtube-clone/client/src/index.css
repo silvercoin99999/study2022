@@ -24,6 +24,10 @@ body {
 	background-color: #fff;
 }
 
+#root {
+	padding-top: 50px;
+}
+
 .app {
 	display: flex;
 	align-items: center;
@@ -40,4 +44,33 @@ input.error {
 	height: 5px;
 	margin-top: -12px;
 	color: red;
+}
+
+.duration-wrap {
+	width: 100%;
+}
+
+.duration-wrap a {
+	display: block;
+	position: relative;
+}
+
+.duration-wrap .duration {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin: 4px;
+	padding: 2px 4px;
+	border-radius: 2px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: .5px;
+	line-height: 12px;
+	background-color: rgba(17, 17, 17, .8);
+	opacity: .8;
+}
+
+.duration-wrap .video-info {
+	padding-left: 48px;
 }

@@ -10,6 +10,9 @@ const items1 = [
   { label: <Link to="/login">Signin</Link>, key: "Signin" },
   { label: <Link to="/register">Signup</Link>, key: "Signup" },
 ];
+const items2 = [
+  { label: <Link to="/video/upload">upload</Link>, key: "upload" },
+];
 
 function RightMenu(props) {
   const user = useSelector((state) => state.user);
@@ -28,7 +31,12 @@ function RightMenu(props) {
   if (user.userData && !user.userData.isAuth) {
     return <Menu items={items1} mode={props.mode} />;
   } else {
-    return <button onClick={logoutHandler}>로그아웃</button>;
+    return (
+      <>
+        <Menu items={items2} mode={props.mode} />
+        <button onClick={logoutHandler}>로그아웃</button>
+      </>
+    );
   }
 }
 
